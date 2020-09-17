@@ -1,0 +1,564 @@
+//==============================================================
+// Solo Bass Trombone : Performance Key Switches
+//
+//   This is meant for bass-trombone-SOLOs when you have transposed
+//   your MIDI controller down an octave to reach the lower notes
+//   so that the key switches still work at A5 after being transposed
+//
+//   This is a combination of
+//
+//     bass-trombone-SOLO-PERF.sfz
+//     bass-trombone-SOLO-PERF-staccato.sfz
+//
+//   ... to create a Key Switchable patch
+//
+//   After being transposed down an octave:
+//     key switch a5  = Performance
+//     key switch c6  = Performance Staccato
+//
+//   by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+<control>
+// set some sfz 2.0 default values
+// mod wheel
+set_cc1=64
+// pan (not used but Sforzando will default to 0 = 100%L when
+//  other CC settings are present)
+set_cc10=64
+
+//==============================================================
+// Bass Trombone Solo : Performance
+//
+//   This is a combination of
+//
+//     bass-trombone-SOLO-sustain.sfz
+//     bass-trombone-staccato.sfz
+//
+//   ... where high key velocity reduces the sample attack time
+//       and the mod wheel increases the volume
+//
+//   by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+
+//==============================================================
+// Bass Trombone Solo : Sustain
+//
+//   Brass - Bass Trombone Solo.sfz from Sonatina Symphonic Orchestra - http://sso.mattiaswestlund.net
+//
+//   modified by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+// ------------------------------
+//  Sonatina Symphonic Orchestra
+// ------------------------------
+//         Bass Trombone
+// ------------------------------
+
+<group>
+// sustain by default
+sw_default=a5
+sw_lokey=a5
+sw_hikey=c6
+sw_last=a5
+sw_label=C6 Performance
+
+volume=-28
+
+// cc1 controls gain after lowering volume of all samples (PB)
+gain_cc1=28
+// reduce velocity tracking, use cc1 for volume (PB)
+amp_veltrack=60
+
+// reduce attack with increased key velocity (PB)
+ampeg_attack=1
+ampeg_vel2attack=-2
+
+// simulate accent by delaying sustain at higher velocity (PB)
+delay_cc1=0.20
+
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+
+
+
+
+
+// add some volume vibrato (PB)
+amplfo_freq=0.37
+amplfo_depth=0.7
+amplfo_delay=2.7
+amplfo_fade=0.5
+
+// add some pitch vibrato (PB)
+pitchlfo_freq=3.531
+pitchlfo_depth=10
+pitchlfo_delay=0.6
+pitchlfo_fade=1.0
+
+// these are to help reduce the repeatability of
+// the above vibrato for those with sfz 2.0 capabilities (PB)
+
+// add some volume vibrato [sfz2.0] (PB)
+lfo01_delay=2.1
+lfo01_fade=0.5
+lfo01_wave=1
+lfo01_volume=0.20
+lfo01_freq=2.59
+
+// add some pitch vibrato [sfz2.0] (PB)
+lfo02_delay=2.5
+lfo02_fade=0.5
+lfo02_wave=1
+lfo02_pitch=5
+lfo02_freq=2.79
+
+ampeg_release=0.600
+fil_veltrack=11000
+fil_type=lpf_2p
+cutoff=120
+
+<region>
+sample=..\libs\SSO\Samples\Bass Trombone\bass_trombone-g1-PB-loop.wav
+delay_cc1=0.05
+
+// extend range to Bb0, I've heard a bass trombone play this low (PB)
+lokey=a#0
+hikey=g#1
+pitch_keycenter=g1
+
+<region>
+sample=..\libs\SSO\Samples\Bass Trombone\bass_trombone-a#1-PB-loop.wav
+delay_cc1=0.05
+
+lokey=a1
+hikey=b1
+pitch_keycenter=a#1
+volume=-24.5
+
+<region>
+sample=..\libs\SSO\Samples\Bass Trombone\bass_trombone-c#2-PB-loop.wav
+delay_cc1=0.04
+
+lokey=c2
+hikey=d2
+pitch_keycenter=c#2
+volume=-24.5
+
+<region>
+sample=..\libs\SSO\Samples\Bass Trombone\bass_trombone-e2-PB-loop.wav
+delay_cc1=0.053
+
+lokey=d#2
+hikey=f2
+pitch_keycenter=e2
+volume=-22
+
+<region>
+sample=..\libs\SSO\Samples\Bass Trombone\bass_trombone-g2-PB-loop.wav
+delay_cc1=0.09
+
+lokey=f#2
+hikey=g#2
+pitch_keycenter=g2
+volume=-25
+
+<region>
+sample=..\libs\SSO\Samples\Bass Trombone\bass_trombone-a#2-PB-loop.wav
+delay_cc1=0.05
+
+lokey=a2
+hikey=c#3
+pitch_keycenter=a#2
+volume=-26
+
+// removed sample c#3 due to buzz noise(PB)
+
+<region>
+sample=..\libs\SSO\Samples\Bass Trombone\bass_trombone-e3-PB-loop.wav
+delay_cc1=0.05
+
+lokey=d3
+hikey=f3
+pitch_keycenter=e3
+volume=-26
+
+// reduce bass, add treble to better match previous notes (PB)
+eq1_freq=130.9
+eq1_bw=4
+eq1_gain=-6.4
+
+eq2_freq=1957.2
+eq2_bw=1.96
+eq2_gain=8.1
+
+eq3_freq=6072.9
+eq3_bw=0.54
+eq3_gain=-7.4
+
+
+<region>
+sample=..\libs\SSO\Samples\Bass Trombone\bass_trombone-g3-PB-loop.wav
+delay_cc1=0.04
+
+lokey=f#3
+hikey=g#3
+pitch_keycenter=g3
+volume=-23
+
+<region>
+sample=..\libs\SSO\Samples\Bass Trombone\bass_trombone-a#3-PB-loop.wav
+delay_cc1=0.04
+
+lokey=a3
+hikey=b3
+pitch_keycenter=a#3
+volume=-26
+
+<region>
+sample=..\libs\SSO\Samples\Bass Trombone\bass_trombone-c#4-PB-loop.wav
+delay_cc1=0.03
+
+lokey=c4
+hikey=d4
+pitch_keycenter=c#4
+volume=-24
+
+<region>
+sample=..\libs\SSO\Samples\Bass Trombone\bass_trombone-e4-PB-loop.wav
+delay_cc1=0.04
+
+lokey=d#4
+// extend range to F5, I've heard a bass trombone play this high (PB)
+hikey=f5
+pitch_keycenter=e4
+volume=-25
+
+
+//==============================================================
+// Bass Trombone Solo : Staccato
+//
+//   Brass - Bass Trombone Solo.sfz from Sonatina Symphonic Orchestra - http://sso.mattiaswestlund.net
+//
+//   modified by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+// ------------------------------
+//  Sonatina Symphonic Orchestra
+// ------------------------------
+//         Bass Trombone
+// ------------------------------
+
+<group>
+// sustain by default
+sw_default=a5
+sw_lokey=a5
+sw_hikey=c6
+sw_last=a5
+sw_label=C6 Performance
+
+volume=-31
+
+// cc1 controls gain after lowering volume of all samples (PB)
+gain_cc1=24
+// reduce velocity tracking, use cc1 for volume (PB)
+amp_veltrack=60
+
+// fade in the staccato samples with key velocity (PB)
+xfin_lovel=63
+xfin_hivel=127
+
+// create staccato from sustain (PB)
+offset=1000
+ampeg_attack=0.03
+ampeg_sustain=0
+ampeg_hold=0.12
+ampeg_decay=0.3
+ampeg_release=0.3
+
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+
+
+
+
+fil_veltrack=11000
+fil_type=lpf_2p
+cutoff=120
+
+<region>
+sample=..\libs\SSO\Samples\Bass Trombone\bass_trombone-g1-PB-loop.wav
+volume=-22
+
+// extend range to Bb0, I've heard a bass trombone play this low (PB)
+lokey=a#0
+hikey=g#1
+pitch_keycenter=g1
+
+<region>
+sample=..\libs\SSO\Samples\Bass Trombone\bass_trombone-a#1-PB-loop.wav
+lokey=a1
+hikey=b1
+pitch_keycenter=a#1
+volume=-27.5
+
+<region>
+sample=..\libs\SSO\Samples\Bass Trombone\bass_trombone-c#2-PB-loop.wav
+offset=4000
+
+lokey=c2
+hikey=d2
+pitch_keycenter=c#2
+volume=-27.5
+
+<region>
+sample=..\libs\SSO\Samples\Bass Trombone\bass_trombone-e2-PB-loop.wav
+lokey=d#2
+hikey=g#2
+pitch_keycenter=e2
+volume=-24
+
+// removed g2 (PB)
+
+<region>
+sample=..\libs\SSO\Samples\Bass Trombone\bass_trombone-a#2-PB-loop.wav
+offset=2000
+
+lokey=a2
+hikey=c#3
+pitch_keycenter=a#2
+volume=-27
+
+// removed sample c#3 due to buzz noise(PB)
+
+<region>
+sample=..\libs\SSO\Samples\Bass Trombone\bass_trombone-e3-PB-loop.wav
+
+lokey=d3
+hikey=f3
+pitch_keycenter=e3
+volume=-24
+
+// reduce bass, add treble to better match previous notes (PB)
+eq1_freq=130.9
+eq1_bw=4
+eq1_gain=-6.4
+
+eq2_freq=1957.2
+eq2_bw=1.96
+eq2_gain=8.1
+
+eq3_freq=6072.9
+eq3_bw=0.54
+eq3_gain=-7.4
+
+
+<region>
+sample=..\libs\SSO\Samples\Bass Trombone\bass_trombone-g3-PB-loop.wav
+lokey=f#3
+hikey=g#3
+pitch_keycenter=g3
+volume=-24
+
+<region>
+sample=..\libs\SSO\Samples\Bass Trombone\bass_trombone-a#3-PB-loop.wav
+lokey=a3
+hikey=b3
+pitch_keycenter=a#3
+volume=-23
+
+<region>
+sample=..\libs\SSO\Samples\Bass Trombone\bass_trombone-c#4-PB-loop.wav
+offset=0
+
+lokey=c4
+hikey=d4
+pitch_keycenter=c#4
+volume=-16
+
+<region>
+sample=..\libs\SSO\Samples\Bass Trombone\bass_trombone-e4-PB-loop.wav
+lokey=d#4
+// extend range to F5, I've heard a bass trombone play this high (PB)
+hikey=f5
+pitch_keycenter=e4
+volume=-25
+
+
+
+
+
+//==============================================================
+// Bass Trombone Solo : Performance Staccato
+//
+// ... where the mod wheel increases the volume
+//
+//   by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+
+//==============================================================
+// Bass Trombone Solo : Staccato
+//
+//   Brass - Bass Trombone Solo.sfz from Sonatina Symphonic Orchestra - http://sso.mattiaswestlund.net
+//
+//   modified by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+// ------------------------------
+//  Sonatina Symphonic Orchestra
+// ------------------------------
+//         Bass Trombone
+// ------------------------------
+
+<group>
+// sustain by default
+sw_default=a5
+sw_lokey=a5
+sw_hikey=c6
+sw_last=c6
+sw_label=E6 Performance Staccato
+
+volume=-31
+
+// cc1 controls gain after lowering volume of all samples (PB)
+gain_cc1=24
+// reduce velocity tracking, use cc1 for volume (PB)
+amp_veltrack=60
+
+
+// create staccato from sustain (PB)
+offset=1000
+ampeg_attack=0.03
+ampeg_sustain=0
+ampeg_hold=0.12
+ampeg_decay=0.3
+ampeg_release=0.3
+
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+
+
+
+
+fil_veltrack=11000
+fil_type=lpf_2p
+cutoff=120
+
+<region>
+sample=..\libs\SSO\Samples\Bass Trombone\bass_trombone-g1-PB-loop.wav
+volume=-22
+
+// extend range to Bb0, I've heard a bass trombone play this low (PB)
+lokey=a#0
+hikey=g#1
+pitch_keycenter=g1
+
+<region>
+sample=..\libs\SSO\Samples\Bass Trombone\bass_trombone-a#1-PB-loop.wav
+lokey=a1
+hikey=b1
+pitch_keycenter=a#1
+volume=-27.5
+
+<region>
+sample=..\libs\SSO\Samples\Bass Trombone\bass_trombone-c#2-PB-loop.wav
+offset=4000
+
+lokey=c2
+hikey=d2
+pitch_keycenter=c#2
+volume=-27.5
+
+<region>
+sample=..\libs\SSO\Samples\Bass Trombone\bass_trombone-e2-PB-loop.wav
+lokey=d#2
+hikey=g#2
+pitch_keycenter=e2
+volume=-24
+
+// removed g2 (PB)
+
+<region>
+sample=..\libs\SSO\Samples\Bass Trombone\bass_trombone-a#2-PB-loop.wav
+offset=2000
+
+lokey=a2
+hikey=c#3
+pitch_keycenter=a#2
+volume=-27
+
+// removed sample c#3 due to buzz noise(PB)
+
+<region>
+sample=..\libs\SSO\Samples\Bass Trombone\bass_trombone-e3-PB-loop.wav
+
+lokey=d3
+hikey=f3
+pitch_keycenter=e3
+volume=-24
+
+// reduce bass, add treble to better match previous notes (PB)
+eq1_freq=130.9
+eq1_bw=4
+eq1_gain=-6.4
+
+eq2_freq=1957.2
+eq2_bw=1.96
+eq2_gain=8.1
+
+eq3_freq=6072.9
+eq3_bw=0.54
+eq3_gain=-7.4
+
+
+<region>
+sample=..\libs\SSO\Samples\Bass Trombone\bass_trombone-g3-PB-loop.wav
+lokey=f#3
+hikey=g#3
+pitch_keycenter=g3
+volume=-24
+
+<region>
+sample=..\libs\SSO\Samples\Bass Trombone\bass_trombone-a#3-PB-loop.wav
+lokey=a3
+hikey=b3
+pitch_keycenter=a#3
+volume=-23
+
+<region>
+sample=..\libs\SSO\Samples\Bass Trombone\bass_trombone-c#4-PB-loop.wav
+offset=0
+
+lokey=c4
+hikey=d4
+pitch_keycenter=c#4
+volume=-16
+
+<region>
+sample=..\libs\SSO\Samples\Bass Trombone\bass_trombone-e4-PB-loop.wav
+lokey=d#4
+// extend range to F5, I've heard a bass trombone play this high (PB)
+hikey=f5
+pitch_keycenter=e4
+volume=-25
+
+
+
+

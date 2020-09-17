@@ -1,0 +1,128 @@
+Version 3.2.1.1 - Apr 24 2020
+-----------------------------
+* BUGS FIXED
+- contrabassoon and "all-woodwinds" patches had uppercase / lowercase issues
+with file paths on Linux causing a file not found error
+(thanks to Aaron Walker for finding this)
+- bass clarinet and bass trombone had the same uppercase / lowercase issue
+(thanks to Dmitri (Dimitris).Giannos for finding this)
+
+Version 3.2.1 - Apr 13 2020
+---------------------------
+* IMPROVED
+- adjusted pitch of Flute SEC Sustain g5-f6
+- e3 sounded like it had too much vibrato for some reason so now 3_Bb-PB-loop.wav
+is used to play e3 instead of 3_Db-PB-loop.wav
+- randomization of stacc and sus patches is now consistently 
+this
+  pitch_random=12
+  amp_random=1.5 
+  delay_random=0.012
+
+instead of mostly but not always this
+  pitch_random=5
+  amp_random=1
+
+* BUGS FIXED
+- introduced a bug (in ver 3.1.2) where low velocity
+notes in cello-SEC-PERF were no longer using a slow attack which meant
+low notes would now be louder and more sudden than before. 
+This has been corrected (thanks to Hix Haamankuli for discovering this)
+
+Version 3.2 - Nov 23 2019
+-------------------------
+* ADDED
+- bass-trombone-SOLO-PERF-KS-A5.sfz
+- explicit staccato articulations for all strings, brass, woodwinds
+- Key switch patches for brass, woodwinds to select the new staccato articulation
+- added staccato to strings key switch patches 
+
+* IMPROVED
+- removed erroneous comment from bassoon-SEC-PERF.sfz
+- reduced attack on cello SEC PERF. It was sounding a little too synthy with 
+the faster attack
+- adjusted tuning of cello SEC for a4-c5
+- adjusted tuning of cello SEC for c4-d4
+- adjusted tuning of cello SEC for f#2-g#2
+- adjusted tuning of cello SEC for d#2-f2
+- adjusted tuning of cello SEC for c2-d2
+- adjusted tuning of flute SOLO staccato note for b4-d5
+- bass trombone SOLO removed sample c#3 - due to buzz noise
+- bass trombone SOLO improved sound of e3
+                
+* BUGS FIXED
+- tubular bells are now mono
+- slightly adjusted panning of FEMALE singers in the MIXED choir 
+
+Version 3.1.2 - March 1 2019
+----------------------------
+* IMPROVED
+- cello SEC sustain, improved a few notes by shifting which samples were
+triggered by which notes
+- cello SEC staccato, improved a few notes by shifting which samples were
+triggered by which notes
+- cello SEC, removed sample SEC 3_E-PB-loop.wav, note sounded weak when 
+compared to others, stretched 3_Db-PB-loop.wav instead
+- cello SOLO sustain, removed extra vibrato
+- cello SOLO sustain, adjusted key mapping for a few notes to improve 
+   sustained vibrato (vibrato becomes too fast if low notes stretched too high)
+- now using "xf_cccurve=gain", instead of default "xf_cccurve=power" for cross
+fade patches (trumpet, french horn, trombone) for smoother transition
+between samples (as suggested by Zeger Knaepen)
+- All sustain strings and choir, now using ampeg_vel2release for legato like
+transition between slowly played string notes which means the slower the 
+note is played, the longer the decay so it overlaps better with the next note.
+ (as suggested by Zeger Knaepen)
+- timpani - replaced artificial round robin with randomized pitch for
+humanization of each hit
+
+* BUGS FIXED
+- trumpet-SEC-PERF.sfz - removed duplicate "group=1" settings as it's 
+unneeded. Seems harmless but who knows.
+- french-horn-SEC-PERF - removed an old comment
+- timpani-hit - moved an inline comment to a line by itself. Inline
+   comments have been known to cause trouble for at least one .sfz player
+
+Version 3.1.1 - October 8 2018
+------------------------------
+* BUGS FIXED
+- enabled Sforzando to properly handle sustain pedal such that
+CC64 values 0-63 are "sustain off" as per the MIDI spec instead of just
+0 being used for "sustain off".
+- corrected instrument list for 1st violins, 2nd violins to warn of potential
+need to transpose to reach upper notes as well as mention the C3 keyswitch option
+
+* ADDED 
+These were accidentally omitted from version 3.1
+- 1st-violin-SOLO-PERF-KS-C3
+- 2nd-violin-SOLO-PERF-KS-C3
+
+Version 3.1 - June 12, 2018
+---------------------------
+* BUGS FIXED
+- clarinet-SOLO relocated an inline comment that could cause problems for
+  some sfz players
+- timpani-KS-C6.sfz, there was no sound until a key switch was selected because
+  the default was not set correctly in the file.
+- clarinet SOLO and clarinet SEC, highest note was C7, should only be Bb6
+- documentation directory was missing the .css file for the instrument lists
+
+* IMPROVED
+- 1st violin SOLO, improved blend between staccato and sustain samples.
+
+* ADDED
+- alto flute, bass clarinet, contrabassoon, bass trombone, celesta
+- contrabassoon to all-woodwinds-SOLO-PERF.sfz, 
+                   all-woodwinds-SOLO-PERF-panned.sfz, 
+                   all-woodwinds-SEC-PERF.sfz,
+                   all-woodwinds-SEC-PERF-panned.sfz
+
+* REMOVED
+These were accidentally included in version 3.0
+- bass-SEC-PERF-KS-C7.sfz
+- bass-SOLO-PERF-KS-C7.sfz
+
+Version 3.0 - Feb 10, 2018
+-------------------------
+- [ First Public Release ]
+

@@ -1,0 +1,156 @@
+//==============================================================
+// Solo Contrabassoon : Performance Staccato
+//
+// ... where the mod wheel increases the volume
+//
+//   by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+<control>
+// set some sfz 2.0 default values
+// mod wheel
+set_cc1=64
+// pan (not used but Sforzando will default to 0 = 100%L when
+//  other CC settings are present)
+set_cc10=64
+
+//==============================================================
+// Solo Contrabassoon : Staccato
+//
+//   Woodwinds - Contrabassoon Solo.sfz - from Sonatina Symphonic Orchestra - http://sso.mattiaswestlund.net
+//                                                                                                      
+//   Modified by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+// ------------------------------
+//  Sonatina Symphonic Orchestra
+// ------------------------------
+//         Contrabassoon
+// ------------------------------
+
+<group>
+volume=-36
+// cc1 controls gain after lowering volume of all samples (PB)
+gain_cc1=32
+// reduce velocity tracking, use cc1 for volume (PB)
+amp_veltrack=60
+
+
+// manufacture staccato from sustain (PB)
+offset=1000
+ampeg_attack=0.03
+ampeg_sustain=0
+ampeg_hold=0.10
+ampeg_decay=0.4
+ampeg_release=0.5
+
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-a#0-PB-loop.wav
+ampeg_hold=0.05
+
+lokey=a#0
+hikey=b0
+pitch_keycenter=a#0
+tune=-20
+volume=-29
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-c#1-PB-loop.wav
+ampeg_hold=0.07
+
+lokey=c1
+hikey=d1
+pitch_keycenter=c#1
+tune=-16
+volume=-32
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-e1-PB-loop.wav
+ampeg_hold=0.04
+
+lokey=d#1
+hikey=f1
+pitch_keycenter=e1
+volume=-33
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-g1-PB-loop.wav
+ampeg_hold=0.07
+
+lokey=f#1
+hikey=g#1
+pitch_keycenter=g1
+tune=-11
+volume=-32
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-a#1-PB-loop.wav
+ampeg_hold=0.05
+
+lokey=a1
+hikey=b1
+pitch_keycenter=a#1
+tune=-18
+volume=-33
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-c#2-PB-loop.wav
+ampeg_hold=0.05
+
+lokey=c2
+hikey=d2
+pitch_keycenter=c#2
+volume=-30
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-e2-PB-loop.wav
+ampeg_hold=0.05
+
+lokey=d#2
+hikey=g#2
+pitch_keycenter=e2
+volume=-33
+
+// removed g2 (PB)
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-a#2-PB-loop.wav
+lokey=a2
+hikey=b2
+pitch_keycenter=a#2
+volume=-32.5
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-c#3-PB-loop.wav
+ampeg_hold=0.05
+offset=5000
+
+lokey=a#2
+hikey=f3
+pitch_keycenter=c#3
+tune=-10
+volume=-29
+
+// removed sample e3 (PB)
+
+<region>
+sample=..\libs\SSO\Samples\Contrabassoon\contrabassoon-a#3-PB-loop.wav
+ampeg_hold=0.05
+offset=2000
+
+lokey=f#3
+hikey=a#3
+pitch_keycenter=a#3
+tune=3
+volume=-30
+
+

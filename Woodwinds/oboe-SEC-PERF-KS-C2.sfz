@@ -1,0 +1,431 @@
+//==============================================================
+// Oboe Section : Performance Key Switches
+//
+//   This is a combination of
+//
+//     oboe-SEC-PERF.sfz
+//     oboe-SEC-PERF-staccato.sfz
+//
+//   ... to create a Key Switchable patch
+//
+//     key switch c2  = Performance
+//     key switch e2  = Performance Staccato
+//
+//   by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+<control>
+// set some sfz 2.0 default values
+// mod wheel
+set_cc1=64
+// pan (not used but Sforzando will default to 0 = 100%L when
+//  other CC settings are present)
+set_cc10=64
+
+//==============================================================
+// Oboe Section : Performance
+//
+//   This is a combination of
+//
+//     oboe-SEC-sustain.sfz
+//     oboe-SEC-staccato.sfz
+//
+//   ... where high key velocity reduces the sample attack time
+//       and the mod wheel increases the volume
+//
+//   by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+
+//==============================================================
+//  Oboe Section : Sustain
+//
+//   Woodwinds - Oboes Sustain.sfz from Sonatina Symphonic Orchestra - http://sso.mattiaswestlund.net
+//
+//   modified by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+// ------------------------------
+//  Sonatina Symphonic Orchestra
+// ------------------------------
+//        Oboes Sustain
+// ------------------------------
+
+<group>
+// sustain by default
+sw_default=c2
+sw_lokey=c2
+sw_hikey=e2
+sw_last=c2
+sw_label=C2 Performance
+
+// cc1 controls gain after lowering volume of all samples (PB)
+gain_cc1=29
+// reduce velocity tracking, use cc1 for volume (PB)
+amp_veltrack=60
+
+// reduce attack with increased key velocity (PB)
+ampeg_attack=1
+ampeg_vel2attack=-2
+
+// simulate accent by delaying sustain at higher velocity (PB)
+delay_cc1=0.06
+
+
+volume=-28
+// slightly longer release for sustain (PB)
+ampeg_release=0.9
+
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+
+
+// removed a#3, sounds accented (PB)
+
+<region>
+sample=..\libs\SSO\Samples\Oboes\oboes-sus-c#4-PB-loop.wav
+lokey=a#3
+hikey=d4
+pitch_keycenter=c#4
+
+<region>
+sample=..\libs\SSO\Samples\Oboes\oboes-sus-e4-PB-loop.wav
+lokey=d#4
+hikey=f4
+pitch_keycenter=e4
+
+<region>
+sample=..\libs\SSO\Samples\Oboes\oboes-sus-g4-PB-loop.wav
+lokey=f#4
+hikey=g#4
+pitch_keycenter=g4
+
+<region>
+sample=..\libs\SSO\Samples\Oboes\oboes-sus-a#4-PB-loop.wav
+lokey=a4
+hikey=b4
+pitch_keycenter=a#4
+
+<region>
+sample=..\libs\SSO\Samples\Oboes\oboes-sus-c#5-PB-loop.wav
+lokey=c5
+hikey=d5
+pitch_keycenter=c#5
+
+<region>
+sample=..\libs\SSO\Samples\Oboes\oboes-sus-e5-PB-loop.wav
+pan=-10
+lokey=d#5
+hikey=f5
+pitch_keycenter=e5
+
+<region>
+sample=..\libs\SSO\Samples\Oboes\oboes-sus-g5-PB-loop.wav
+lokey=f#5
+hikey=g#5
+pitch_keycenter=g5
+
+<region>
+sample=..\libs\SSO\Samples\Oboes\oboes-sus-a#5-PB-loop.wav
+lokey=a5
+hikey=d6
+pitch_keycenter=a#5
+
+// removed C#6, had a click sound (PB)
+
+<region>
+sample=..\libs\SSO\Samples\Oboes\oboes-sus-e6-PB-loop.wav
+lokey=d#6
+hikey=a6 // extend the range (PB)
+pitch_keycenter=e6
+
+
+
+//==============================================================
+//  Oboe Section : Staccato
+//
+//   Woodwinds - Oboes Staccato.sfz from Sonatina Symphonic Orchestra - http://sso.mattiaswestlund.net
+//
+//   modified by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+// ------------------------------
+//  Sonatina Symphonic Orchestra
+// ------------------------------
+//        Oboes Staccato
+// ------------------------------
+
+<group>
+// sustain by default
+sw_default=c2
+sw_lokey=c2
+sw_hikey=e2
+sw_last=c2
+sw_label=C2 Performance
+
+// cc1 controls gain after lowering volume of all samples (PB)
+gain_cc1=29
+// reduce velocity tracking, use cc1 for volume (PB)
+amp_veltrack=60
+
+// fade in the staccato samples with key velocity (PB)
+xfin_lovel=63
+xfin_hivel=127
+
+// manufacture staccato from sustain (PB)
+offset=1530
+ampeg_attack=0.04
+ampeg_sustain=0
+ampeg_hold=0.09
+ampeg_decay=0.5
+ampeg_release=0.5
+
+volume=-30
+
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+
+
+// removed a#3, sounds accented (PB)
+
+<region>
+sample=..\libs\SSO\Samples\Oboes\oboes-sus-c#4-PB-loop.wav
+volume=-25
+pan=10
+
+lokey=a#3
+hikey=d4
+pitch_keycenter=c#4
+
+<region>
+sample=..\libs\SSO\Samples\Oboes\oboes-sus-e4-PB-loop.wav
+volume=-24
+pan=15
+
+lokey=d#4
+hikey=f4
+pitch_keycenter=e4
+
+<region>
+sample=..\libs\SSO\Samples\Oboes\oboes-sus-g4-PB-loop.wav
+
+volume=-24
+lokey=f#4
+hikey=g#4
+pitch_keycenter=g4
+
+<region>
+sample=..\libs\SSO\Samples\Oboes\oboes-sus-a#4-PB-loop.wav
+
+pan=-10
+volume=-20
+lokey=a4
+hikey=b4
+pitch_keycenter=a#4
+
+<region>
+sample=..\libs\SSO\Samples\Oboes\oboes-sus-c#5-PB-loop.wav
+
+pan=-5
+volume=-20
+lokey=c5
+hikey=d5
+pitch_keycenter=c#5
+
+<region>
+sample=..\libs\SSO\Samples\Oboes\oboes-sus-e5-PB-loop.wav
+
+volume=-20
+pan=-10
+lokey=d#5
+hikey=f5
+pitch_keycenter=e5
+
+<region>
+sample=..\libs\SSO\Samples\Oboes\oboes-sus-g5-PB-loop.wav
+
+volume=-23
+lokey=f#5
+hikey=g#5
+pitch_keycenter=g5
+
+<region>
+sample=..\libs\SSO\Samples\Oboes\oboes-sus-a#5-PB-loop.wav
+
+pan=-20
+volume=-23
+lokey=a5
+hikey=d6
+pitch_keycenter=a#5
+
+// removed C#6, had a click sound (PB)
+
+<region>
+sample=..\libs\SSO\Samples\Oboes\oboes-sus-e6-PB-loop.wav
+
+pan=20
+volume=-24
+lokey=d#6
+hikey=a6 // extend the range (PB)
+pitch_keycenter=e6
+
+
+
+
+
+//==============================================================
+// Oboe Section : Performance Staccato
+//
+// ... where the mod wheel increases the volume
+//
+//   by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+
+//==============================================================
+//  Oboe Section : Staccato
+//
+//   Woodwinds - Oboes Staccato.sfz from Sonatina Symphonic Orchestra - http://sso.mattiaswestlund.net
+//
+//   modified by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+// ------------------------------
+//  Sonatina Symphonic Orchestra
+// ------------------------------
+//        Oboes Staccato
+// ------------------------------
+
+<group>
+// sustain by default
+sw_default=c2
+sw_lokey=c2
+sw_hikey=e2
+sw_last=e2
+sw_label=E2 Staccato
+
+// cc1 controls gain after lowering volume of all samples (PB)
+gain_cc1=29
+// reduce velocity tracking, use cc1 for volume (PB)
+amp_veltrack=60
+
+
+// manufacture staccato from sustain (PB)
+offset=1530
+ampeg_attack=0.04
+ampeg_sustain=0
+ampeg_hold=0.09
+ampeg_decay=0.5
+ampeg_release=0.5
+
+volume=-30
+
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+
+
+// removed a#3, sounds accented (PB)
+
+<region>
+sample=..\libs\SSO\Samples\Oboes\oboes-sus-c#4-PB-loop.wav
+volume=-25
+pan=10
+
+lokey=a#3
+hikey=d4
+pitch_keycenter=c#4
+
+<region>
+sample=..\libs\SSO\Samples\Oboes\oboes-sus-e4-PB-loop.wav
+volume=-24
+pan=15
+
+lokey=d#4
+hikey=f4
+pitch_keycenter=e4
+
+<region>
+sample=..\libs\SSO\Samples\Oboes\oboes-sus-g4-PB-loop.wav
+
+volume=-24
+lokey=f#4
+hikey=g#4
+pitch_keycenter=g4
+
+<region>
+sample=..\libs\SSO\Samples\Oboes\oboes-sus-a#4-PB-loop.wav
+
+pan=-10
+volume=-20
+lokey=a4
+hikey=b4
+pitch_keycenter=a#4
+
+<region>
+sample=..\libs\SSO\Samples\Oboes\oboes-sus-c#5-PB-loop.wav
+
+pan=-5
+volume=-20
+lokey=c5
+hikey=d5
+pitch_keycenter=c#5
+
+<region>
+sample=..\libs\SSO\Samples\Oboes\oboes-sus-e5-PB-loop.wav
+
+volume=-20
+pan=-10
+lokey=d#5
+hikey=f5
+pitch_keycenter=e5
+
+<region>
+sample=..\libs\SSO\Samples\Oboes\oboes-sus-g5-PB-loop.wav
+
+volume=-23
+lokey=f#5
+hikey=g#5
+pitch_keycenter=g5
+
+<region>
+sample=..\libs\SSO\Samples\Oboes\oboes-sus-a#5-PB-loop.wav
+
+pan=-20
+volume=-23
+lokey=a5
+hikey=d6
+pitch_keycenter=a#5
+
+// removed C#6, had a click sound (PB)
+
+<region>
+sample=..\libs\SSO\Samples\Oboes\oboes-sus-e6-PB-loop.wav
+
+pan=20
+volume=-24
+lokey=d#6
+hikey=a6 // extend the range (PB)
+pitch_keycenter=e6
+
+
+
+
+

@@ -1,0 +1,290 @@
+//==============================================================
+// Tuba Solo : Performance
+//
+//   This is a combination of
+//
+//     Tuba-SOLO-sustain.sfz
+//     Tuba-SOLO-staccato.sfz
+//
+//   ... where high key velocity reduces the sample attack time
+//       and the mod wheel increases the volume
+//
+//   by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+<control>
+// set some sfz 2.0 default values
+// mod wheel
+set_cc1=64
+// pan (not used but Sforzando will default to 0 = 100%L when
+//  other CC settings are present)
+set_cc10=64
+
+//==============================================================
+// Tuba Solo : Sustain
+//
+//   Brass - Tuba Sustain.sfz from Sonatina Symphonic Orchestra - http://sso.mattiaswestlund.net
+//
+//   samples and .sfz modified by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+// ------------------------------
+//  Sonatina Symphonic Orchestra
+// ------------------------------
+//         Tuba Sustain
+// ------------------------------
+
+<group>
+volume=-28
+
+// cc1 controls gain after lowering volume of all samples (PB)
+gain_cc1=24
+// reduce velocity tracking, use cc1 for volume (PB)
+amp_veltrack=60
+
+// reduce attack with increased key velocity (PB)
+ampeg_attack=1
+ampeg_vel2attack=-2
+
+// simulate accent by delaying sustain at higher velocity (PB)
+delay_cc1=0.03
+
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+
+
+ampeg_release=0.645
+fil_veltrack=11000
+fil_type=lpf_2p
+cutoff=120
+
+<region>
+sample=..\libs\SSO\Samples\Tuba\tuba-sus-e1-PB-loop.wav
+volume=-23
+
+lokey=d1
+hikey=f1
+pitch_keycenter=e1
+tune=-3
+
+<region>
+sample=..\libs\SSO\Samples\Tuba\tuba-sus-g1-PB-loop.wav
+volume=-22
+
+lokey=f#1
+hikey=g#1
+pitch_keycenter=g1
+tune=5
+
+<region>
+sample=..\libs\SSO\Samples\Tuba\tuba-sus-a#1-PB-loop.wav
+volume=-24
+
+lokey=a1
+hikey=b1
+pitch_keycenter=a#1
+
+<region>
+sample=..\libs\SSO\Samples\Tuba\tuba-sus-c#2-PB-loop.wav
+volume=-21
+
+lokey=c2
+hikey=d2
+pitch_keycenter=c#2
+tune=-14
+
+<region>
+sample=..\libs\SSO\Samples\Tuba\tuba-sus-e2-PB-loop.wav
+volume=-23
+
+lokey=d#2
+hikey=e2
+pitch_keycenter=e2
+tune=-17
+
+<region>
+sample=..\libs\SSO\Samples\Tuba\tuba-sus-g2-PB-loop.wav
+volume=-21
+
+lokey=f2
+hikey=g#2
+pitch_keycenter=g2
+
+<region>
+sample=..\libs\SSO\Samples\Tuba\tuba-sus-a#2-PB-loop.wav
+
+delay_cc1=0.0
+volume=-21
+
+lokey=a2
+hikey=b2
+pitch_keycenter=a#2
+
+<region>
+sample=..\libs\SSO\Samples\Tuba\tuba-sus-c#3-PB-loop.wav
+
+delay_cc1=0.0
+volume=-21
+
+lokey=c3
+hikey=d3
+pitch_keycenter=c#3
+tune=10
+
+<region>
+sample=..\libs\SSO\Samples\Tuba\tuba-sus-e3-PB-loop.wav
+volume=-20
+
+lokey=d#3
+hikey=d4
+pitch_keycenter=e3
+
+// removed g3-c#4, sounded bad (PB)
+
+
+
+
+//==============================================================
+// Tuba Solo : Staccato
+//
+//   Brass - Tuba Staccato.sfz from Sonatina Symphonic Orchestra - http://sso.mattiaswestlund.net
+//
+//   samples and .sfz modified by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+// ------------------------------
+//  Sonatina Symphonic Orchestra
+// ------------------------------
+//         Tuba Staccato
+// ------------------------------
+
+<group>
+volume=-29
+
+// cc1 controls gain after lowering volume of all samples (PB)
+gain_cc1=24
+// reduce velocity tracking, use cc1 for volume (PB)
+amp_veltrack=60
+
+// fade in the staccato samples with key velocity (PB)
+xfin_lovel=63
+xfin_hivel=127
+
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+
+ampeg_attack=0.03
+
+loop_mode=one_shot
+
+
+fil_veltrack=11000
+fil_type=lpf_2p
+cutoff=120
+
+<region>
+sample=..\libs\SSO\Samples\Tuba\tuba-stc-rr1-e1-PB.wav
+lokey=d1
+hikey=f1
+pitch_keycenter=e1
+tune=-50
+
+<region>
+sample=..\libs\SSO\Samples\Tuba\tuba-stc-rr1-g1-PB.wav
+lokey=f#1
+hikey=g#1
+pitch_keycenter=g1
+
+<region>
+sample=..\libs\SSO\Samples\Tuba\tuba-stc-rr1-a#1-PB.wav
+lokey=a1
+hikey=b1
+pitch_keycenter=a#1
+
+<region>
+sample=..\libs\SSO\Samples\Tuba\tuba-stc-rr1-c#2-PB.wav
+volume=-30
+
+lokey=c2
+hikey=d2
+pitch_keycenter=c#2
+
+<region>
+sample=..\libs\SSO\Samples\Tuba\tuba-stc-rr2-e2-PB.wav
+tune=-90
+
+lokey=d#2
+hikey=f2
+pitch_keycenter=e2
+
+<region>
+sample=..\libs\SSO\Samples\Tuba\tuba-stc-rr1-g2-PB.wav
+tune=10
+
+lokey=f#2
+hikey=g#2
+pitch_keycenter=g2
+
+<region>
+sample=..\libs\SSO\Samples\Tuba\tuba-stc-rr2-a#2-PB.wav
+tune=-100
+
+lokey=a2
+hikey=b2
+pitch_keycenter=a#2
+
+<region>
+sample=..\libs\SSO\Samples\Tuba\tuba-stc-rr1-c#3-PB.wav
+lokey=c3
+hikey=d3
+pitch_keycenter=c#3
+
+<region>
+sample=..\libs\SSO\Samples\Tuba\tuba-stc-rr1-e3-PB.wav
+tune=15
+
+lokey=d#3
+hikey=f3
+pitch_keycenter=e3
+
+<region>
+sample=..\libs\SSO\Samples\Tuba\tuba-stc-rr2-g3-PB.wav
+tune=-100
+
+lokey=f#3
+hikey=g#3
+pitch_keycenter=g3
+
+<region>
+sample=..\libs\SSO\Samples\Tuba\tuba-stc-rr2-a#3-PB.wav
+tune=-100
+
+lokey=a3
+hikey=b3
+pitch_keycenter=a#3
+
+<region>
+sample=..\libs\SSO\Samples\Tuba\tuba-stc-rr2-c#4-PB.wav
+tune=-100
+
+lokey=c4
+hikey=d4
+pitch_keycenter=c#4
+
+
+
+// removed RR samples (PB)
+
+
+

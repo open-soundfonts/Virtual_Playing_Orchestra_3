@@ -1,0 +1,287 @@
+//==============================================================
+// 1st Violin Solo : Performance Staccato
+//
+// ... where the mod wheel increases the volume
+//
+//   by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+<control>
+// set some sfz 2.0 default values
+// mod wheel
+set_cc1=64
+// pan (not used but Sforzando will default to 0 = 100%L when
+//  other CC settings are present)
+set_cc10=64
+
+//==============================================================
+// Solo Violin : Staccato
+//
+//   violin_spiccato.sfz from No Budget Orchestra - https://nobudgetorchestra.net
+//
+//   modified by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+// remove control opcode - not good when blending with other .sfz files (PB)
+// ------------- RR1  -------------
+<group>
+volume=-42
+
+// cc1 controls gain after lowering volume of all samples (PB)
+gain_cc1=34
+// reduce velocity tracking, use cc1 for volume (PB)
+amp_veltrack=60
+
+
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+
+group_label=group1-RR1
+seq_position=1
+seq_length=2
+
+ampeg_release=0.4
+//	loop_mode=loop_continuous
+// removed 3_G-PB.wav (PB)
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/3_Ab-PB.wav pitch_keycenter=56 lokey=55 hikey=56
+volume=-41
+
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/3_A-PB.wav pitch_keycenter=57 lokey=57 hikey=57
+volume=-41
+
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/3_Bb-PB.wav pitch_keycenter=58 lokey=58 hikey=58
+volume=-42
+
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/3_B-PB.wav pitch_keycenter=59 lokey=59 hikey=59
+volume=-42
+
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/4_C-PB.wav pitch_keycenter=60 lokey=60 hikey=61
+volume=-42
+
+// removed 4_Db-PB.wav (PB)
+// removed 4_D-PB.wav (PB)
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/4_Eb-PB.wav pitch_keycenter=63 lokey=62 hikey=63
+volume=-41
+
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/4_E-PB.wav pitch_keycenter=64 lokey=64 hikey=65
+volume=-41
+
+// removed 4_F-PB.wav (PB)
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/4_Gb-PB.wav pitch_keycenter=66 lokey=66 hikey=66
+volume=-41
+
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/4_G-PB.wav pitch_keycenter=67 lokey=67 hikey=67
+volume=-41
+
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/4_Ab-PB.wav pitch_keycenter=68 lokey=68 hikey=69
+volume=-41
+
+// removed 4_A-PB.wav (PB)
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/4_Bb-PB.wav pitch_keycenter=70 lokey=70 hikey=70
+volume=-42
+
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/4_B-PB.wav pitch_keycenter=71 lokey=71 hikey=71
+volume=-41
+
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/5_C-PB.wav pitch_keycenter=72 lokey=72 hikey=72
+volume=-39
+
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/5_Db-PB.wav pitch_keycenter=73 lokey=73 hikey=75
+volume=-41
+
+// removed 5_D-PB.wav (PB)
+// removed 5_Eb-PB.wav (PB)
+// removed 5_E-PB.wav (PB)
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/5_F-PB.wav pitch_keycenter=77 lokey=76 hikey=77
+volume=-40 tune=-5
+
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/5_Gb-PB.wav pitch_keycenter=78 lokey=78 hikey=79
+volume=-40 tune=20
+
+// removed 5_G-PB.wav (PB)
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/5_Ab-PB.wav pitch_keycenter=80 lokey=80 hikey=80
+volume=-39
+
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/5_A-PB.wav pitch_keycenter=81 lokey=81 hikey=81
+volume=-39
+
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/5_Bb-PB.wav pitch_keycenter=82 lokey=82 hikey=82
+volume=-41 tune=-5
+
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/5_B-PB.wav pitch_keycenter=83 lokey=83 hikey=83
+volume=-38 tune=15
+
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/6_C-PB.wav pitch_keycenter=84 lokey=84 hikey=85
+volume=-40.5
+
+// removed 6_Db-PB.wav (PB)
+// removed 6_D-PB.wav (PB)
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/6_Eb-PB.wav pitch_keycenter=87 lokey=86 hikey=87
+volume=-38 tune=-5
+
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/6_E-PB.wav pitch_keycenter=88 lokey=88 hikey=88
+volume=-40 tune=-5
+
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/6_F-PB.wav pitch_keycenter=89 lokey=89 hikey=90
+volume=-39.5 tune=-25
+
+// removed 6_Gb-PB.wav (PB)
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/6_G-PB.wav pitch_keycenter=91 lokey=91 hikey=91
+volume=-40 tune=-15
+
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/6_Ab-PB.wav pitch_keycenter=92 lokey=92 hikey=92
+volume=-38 tune=-15
+
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/6_A-PB.wav pitch_keycenter=93 lokey=93 hikey=93
+volume=-37 tune=-22
+
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/6_Bb-PB.wav pitch_keycenter=94 lokey=94 hikey=105
+volume=-38 tune=-25
+
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/6_B-PB.wav pitch_keycenter=95 lokey=95 hikey=96
+volume=-40 tune=-15
+
+
+// ------------- RR2 -------------
+<group>
+volume=-42
+
+// cc1 controls gain after lowering volume of all samples (PB)
+gain_cc1=34
+// reduce velocity tracking, use cc1 for volume (PB)
+amp_veltrack=60
+
+
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+
+group_label=group1-RR2
+seq_position=2
+seq_length=2
+
+ampeg_release=0.4
+//	loop_mode=loop_continuous
+// removed 3_G-PB.wav (PB)
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/3_Ab-PB.wav pitch_keycenter=56 lokey=57 hikey=57
+volume=-41
+
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/3_A-PB.wav pitch_keycenter=57 lokey=55 hikey=56
+volume=-41
+
+
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/3_Bb-PB.wav pitch_keycenter=58 lokey=59 hikey=59
+volume=-42
+
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/3_B-PB.wav pitch_keycenter=59 lokey=58 hikey=58
+volume=-42
+
+
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/4_C-PB.wav pitch_keycenter=60 lokey=62 hikey=63
+volume=-42
+
+// removed 4_Db-PB.wav (PB)
+// removed 4_D-PB.wav (PB)
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/4_Eb-PB.wav pitch_keycenter=63 lokey=60 hikey=61
+volume=-41
+
+
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/4_E-PB.wav pitch_keycenter=64 lokey=66 hikey=66
+volume=-41
+
+// removed 4_F-PB.wav (PB)
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/4_Gb-PB.wav pitch_keycenter=66 lokey=64 hikey=65
+volume=-41
+
+
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/4_G-PB.wav pitch_keycenter=67 lokey=68 hikey=69
+volume=-41
+
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/4_Ab-PB.wav pitch_keycenter=68 lokey=67 hikey=67
+volume=-41
+
+
+// removed 4_A-PB.wav (PB)
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/4_Bb-PB.wav pitch_keycenter=70 lokey=71 hikey=71
+volume=-42
+
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/4_B-PB.wav pitch_keycenter=71 lokey=70 hikey=70
+volume=-41
+
+
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/5_C-PB.wav pitch_keycenter=72 lokey=73 hikey=75
+volume=-39
+
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/5_Db-PB.wav pitch_keycenter=73 lokey=72 hikey=72
+volume=-41
+
+
+// removed 5_D-PB.wav (PB)
+// removed 5_Eb-PB.wav (PB)
+// removed 5_E-PB.wav (PB)
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/5_F-PB.wav pitch_keycenter=77 lokey=78 hikey=79
+volume=-40 tune=-5
+
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/5_Gb-PB.wav pitch_keycenter=78 lokey=76 hikey=77
+volume=-40 tune=20
+
+
+// removed 5_G-PB.wav (PB)
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/5_Ab-PB.wav pitch_keycenter=80 lokey=81 hikey=81
+volume=-39
+
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/5_A-PB.wav pitch_keycenter=81 lokey=80 hikey=80
+volume=-39
+
+
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/5_Bb-PB.wav pitch_keycenter=82 lokey=83 hikey=83
+volume=-41 tune=-5
+
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/5_B-PB.wav pitch_keycenter=83 lokey=82 hikey=82
+volume=-38 tune=15
+
+
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/6_C-PB.wav pitch_keycenter=84 lokey=86 hikey=87
+volume=-40.5
+
+// removed 6_Db-PB.wav (PB)
+// removed 6_D-PB.wav (PB)
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/6_Eb-PB.wav pitch_keycenter=87 lokey=84 hikey=85
+volume=-38 tune=-5
+
+
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/6_E-PB.wav pitch_keycenter=88 lokey=89 hikey=90
+volume=-40 tune=-5
+
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/6_F-PB.wav pitch_keycenter=89 lokey=88 hikey=88
+volume=-39.5 tune=-25
+
+
+// removed 6_Gb-PB.wav (PB)
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/6_G-PB.wav pitch_keycenter=91 lokey=92 hikey=92
+volume=-40 tune=-15
+
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/6_Ab-PB.wav pitch_keycenter=92 lokey=91 hikey=91
+volume=-38 tune=-15
+
+
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/6_A-PB.wav pitch_keycenter=93 lokey=95 hikey=96
+volume=-37 tune=-22
+
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/6_Bb-PB.wav pitch_keycenter=94 lokey=93 hikey=93
+volume=-38 tune=-25
+
+<region> sample=../libs/NoBudgetOrch/SoloViolin/Spiccato/6_B-PB.wav pitch_keycenter=95 lokey=94 hikey=105
+volume=-40 tune=-15
+
+
+

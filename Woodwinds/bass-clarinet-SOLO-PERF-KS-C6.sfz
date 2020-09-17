@@ -1,0 +1,489 @@
+//==============================================================
+// Solo Bass Clarinet : Performance Key Switches
+//
+//   This is a combination of
+//
+//     bass-clarinet-SOLO-PERF.sfz
+//     bass-clarinet-SOLO-PERF-staccato.sfz
+//
+//   ... to create a Key Switchable patch
+//
+//     key switch c6  = Performance
+//     key switch e6  = Performance Staccato
+//
+//   by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+<control>
+// set some sfz 2.0 default values
+// mod wheel
+set_cc1=64
+// pan (not used but Sforzando will default to 0 = 100%L when
+//  other CC settings are present)
+set_cc10=64
+
+//==============================================================
+// Bass Clarinet Solo : Performance
+//
+//   This is a combination of
+//
+//     bass-clarinet-SOLO-sustain.sfz
+//     bass-clarinet-SOLO-staccato.sfz
+//
+//   ... where high key velocity reduces the sample attack time
+//       and the mod wheel increases the volume
+//
+//   by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+
+//==============================================================
+//  Solo Bass Clarinet : Sustain
+//
+//   Woodwinds - Bass Clarinet Solo.sfz from Sonatina Symphonic Orchestra - http://sso.mattiaswestlund.net
+//
+//   modified by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+// ------------------------------
+//  Sonatina Symphonic Orchestra
+// ------------------------------
+//         Bass Clarinet
+// ------------------------------
+
+<group>
+// sustain by default
+sw_default=c6
+sw_lokey=c6
+sw_hikey=e6
+sw_last=c6
+sw_label=C6 Performance
+
+volume=-30
+
+// cc1 controls gain after lowering volume of all samples (PB)
+gain_cc1=29
+// reduce velocity tracking, use cc1 for volume (PB)
+amp_veltrack=60
+
+// reduce attack with increased key velocity (PB)
+ampeg_attack=1
+ampeg_vel2attack=-2
+
+// simulate accent by delaying sustain at higher velocity (PB)
+delay_cc1=0.02
+
+
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+
+  // slightly longer release (PB)
+ampeg_release=0.6
+
+// add some subtle volume variation (PB)
+amplfo_freq=0.71
+amplfo_depth=0.37
+amplfo_delay=1
+amplfo_fade=0.5
+
+<region>
+sample=..\libs\SSO\Samples\Bass Clarinet\bass_clarinet-d2-PB-loop.wav
+delay_cc1=0.01
+
+lokey=a#1
+hikey=d#2
+pitch_keycenter=d2
+tune=19
+volume=-26.5
+
+<region>
+sample=..\libs\SSO\Samples\Bass Clarinet\bass_clarinet-f2-PB-loop.wav
+delay_cc1=0.01
+
+lokey=e2
+hikey=f#2
+pitch_keycenter=f2
+tune=6
+volume=-29
+
+<region>
+sample=..\libs\SSO\Samples\Bass Clarinet\bass_clarinet-g#2-PB-loop.wav
+delay_cc1=0.0
+
+lokey=g2
+hikey=b2
+pitch_keycenter=g#2
+volume=-26.5
+
+// removed b2 (PB)
+
+<region>
+sample=..\libs\SSO\Samples\Bass Clarinet\bass_clarinet-d3-PB-loop.wav
+lokey=c3
+hikey=d#3
+pitch_keycenter=d3
+tune=5
+volume=-23
+        
+<region>
+sample=..\libs\SSO\Samples\Bass Clarinet\bass_clarinet-f3-PB-loop.wav
+delay_cc1=0.01
+
+lokey=e3
+hikey=f#3
+pitch_keycenter=f3
+tune=8
+volume=-26
+
+<region>
+sample=..\libs\SSO\Samples\Bass Clarinet\bass_clarinet-g#3-PB-loop.wav
+lokey=g3
+hikey=a3
+pitch_keycenter=g#3
+volume=-26
+
+<region>
+sample=..\libs\SSO\Samples\Bass Clarinet\bass_clarinet-b3-PB-loop.wav
+lokey=a#3
+hikey=c4
+pitch_keycenter=b3
+tune=7
+volume=-26
+
+<region>
+sample=..\libs\SSO\Samples\Bass Clarinet\bass_clarinet-d4-PB-loop.wav
+lokey=c#4
+hikey=d#4
+pitch_keycenter=d4
+tune=4
+volume=-24
+
+<region>
+sample=..\libs\SSO\Samples\Bass Clarinet\bass_clarinet-f4-PB-loop.wav
+lokey=e4
+hikey=g#4
+pitch_keycenter=f4
+tune=1
+volume=-20.5
+
+<region>
+sample=..\libs\SSO\Samples\Bass Clarinet\bass_clarinet-b4-PB-loop.wav
+lokey=a4
+hikey=c5
+pitch_keycenter=b4
+tune=3
+volume=-24
+        
+<region>
+sample=..\libs\SSO\Samples\Bass Clarinet\bass_clarinet-d5-PB-loop.wav
+lokey=c#5
+hikey=a5
+pitch_keycenter=d5
+volume=-20
+
+
+//==============================================================
+//  Solo Bass Clarinet : Staccato
+//
+//   Woodwinds - Bass Clarinet Solo.sfz from Sonatina Symphonic Orchestra - http://sso.mattiaswestlund.net
+//
+//   modified by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+// ------------------------------
+//  Sonatina Symphonic Orchestra
+// ------------------------------
+//         Bass Clarinet
+// ------------------------------
+
+<group>
+// sustain by default
+sw_default=c6
+sw_lokey=c6
+sw_hikey=e6
+sw_last=c6
+sw_label=C6 Performance
+
+volume=-35
+
+// cc1 controls gain after lowering volume of all samples (PB)
+gain_cc1=29
+// reduce velocity tracking, use cc1 for volume (PB)
+amp_veltrack=60
+
+// fade in the staccato samples with key velocity (PB)
+xfin_lovel=63
+xfin_hivel=127
+
+// create staccato from sustain (PB)
+ampeg_attack=0.03
+ampeg_sustain=0
+ampeg_hold=0.05
+ampeg_decay=0.6
+ampeg_release=0.6
+
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+
+  <region>
+sample=..\libs\SSO\Samples\Bass Clarinet\bass_clarinet-d2-PB-loop.wav
+offset=2000
+
+lokey=a#1
+hikey=d#2
+pitch_keycenter=d2
+tune=19
+volume=-27.5
+
+<region>
+sample=..\libs\SSO\Samples\Bass Clarinet\bass_clarinet-f2-PB-loop.wav
+offset=2500
+
+lokey=e2
+hikey=f#2
+pitch_keycenter=f2
+tune=6
+volume=-29
+
+<region>
+sample=..\libs\SSO\Samples\Bass Clarinet\bass_clarinet-g#2-PB-loop.wav
+offset=2500
+
+lokey=g2
+hikey=c#3
+pitch_keycenter=g#2
+volume=-25.5
+
+// removed b2 (PB)
+
+// removed d3 (PB)
+
+<region>
+sample=..\libs\SSO\Samples\Bass Clarinet\bass_clarinet-f3-PB-loop.wav
+offset=1500
+
+lokey=d3
+hikey=g#3
+pitch_keycenter=f3
+tune=8
+volume=-28
+
+// removed g#3 (PB)
+
+<region>
+sample=..\libs\SSO\Samples\Bass Clarinet\bass_clarinet-b3-PB-loop.wav
+offset=250
+
+lokey=a3
+hikey=c4
+pitch_keycenter=b3
+tune=7
+volume=-27
+
+<region>
+sample=..\libs\SSO\Samples\Bass Clarinet\bass_clarinet-d4-PB-loop.wav
+offset=500
+
+lokey=c#4
+hikey=d#4
+pitch_keycenter=d4
+tune=4
+volume=-28
+
+<region>
+sample=..\libs\SSO\Samples\Bass Clarinet\bass_clarinet-f4-PB-loop.wav
+offset=750
+
+lokey=e4
+hikey=g#4
+pitch_keycenter=f4
+tune=1
+volume=-24.5
+
+<region>
+sample=..\libs\SSO\Samples\Bass Clarinet\bass_clarinet-b4-PB-loop.wav
+offset=500
+
+lokey=a4
+hikey=c5
+pitch_keycenter=b4
+tune=3
+volume=-27
+        
+<region>
+sample=..\libs\SSO\Samples\Bass Clarinet\bass_clarinet-d5-PB-loop.wav
+offset=250
+
+lokey=c#5
+hikey=a5
+pitch_keycenter=d5
+volume=-22.5
+
+
+
+
+
+//==============================================================
+// Bass Clarinet Solo : Performance Staccato
+//
+// ... where the mod wheel increases the volume
+//
+//   by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+
+//==============================================================
+//  Solo Bass Clarinet : Staccato
+//
+//   Woodwinds - Bass Clarinet Solo.sfz from Sonatina Symphonic Orchestra - http://sso.mattiaswestlund.net
+//
+//   modified by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+// ------------------------------
+//  Sonatina Symphonic Orchestra
+// ------------------------------
+//         Bass Clarinet
+// ------------------------------
+
+<group>
+// sustain by default
+sw_default=c6
+sw_lokey=c6
+sw_hikey=e6
+sw_last=e6
+sw_label=E6 Performance Staccato
+
+volume=-35
+
+// cc1 controls gain after lowering volume of all samples (PB)
+gain_cc1=29
+// reduce velocity tracking, use cc1 for volume (PB)
+amp_veltrack=60
+
+
+// create staccato from sustain (PB)
+ampeg_attack=0.03
+ampeg_sustain=0
+ampeg_hold=0.05
+ampeg_decay=0.6
+ampeg_release=0.6
+
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+
+  <region>
+sample=..\libs\SSO\Samples\Bass Clarinet\bass_clarinet-d2-PB-loop.wav
+offset=2000
+
+lokey=a#1
+hikey=d#2
+pitch_keycenter=d2
+tune=19
+volume=-27.5
+
+<region>
+sample=..\libs\SSO\Samples\Bass Clarinet\bass_clarinet-f2-PB-loop.wav
+offset=2500
+
+lokey=e2
+hikey=f#2
+pitch_keycenter=f2
+tune=6
+volume=-29
+
+<region>
+sample=..\libs\SSO\Samples\Bass Clarinet\bass_clarinet-g#2-PB-loop.wav
+offset=2500
+
+lokey=g2
+hikey=c#3
+pitch_keycenter=g#2
+volume=-25.5
+
+// removed b2 (PB)
+
+// removed d3 (PB)
+
+<region>
+sample=..\libs\SSO\Samples\Bass Clarinet\bass_clarinet-f3-PB-loop.wav
+offset=1500
+
+lokey=d3
+hikey=g#3
+pitch_keycenter=f3
+tune=8
+volume=-28
+
+// removed g#3 (PB)
+
+<region>
+sample=..\libs\SSO\Samples\Bass Clarinet\bass_clarinet-b3-PB-loop.wav
+offset=250
+
+lokey=a3
+hikey=c4
+pitch_keycenter=b3
+tune=7
+volume=-27
+
+<region>
+sample=..\libs\SSO\Samples\Bass Clarinet\bass_clarinet-d4-PB-loop.wav
+offset=500
+
+lokey=c#4
+hikey=d#4
+pitch_keycenter=d4
+tune=4
+volume=-28
+
+<region>
+sample=..\libs\SSO\Samples\Bass Clarinet\bass_clarinet-f4-PB-loop.wav
+offset=750
+
+lokey=e4
+hikey=g#4
+pitch_keycenter=f4
+tune=1
+volume=-24.5
+
+<region>
+sample=..\libs\SSO\Samples\Bass Clarinet\bass_clarinet-b4-PB-loop.wav
+offset=500
+
+lokey=a4
+hikey=c5
+pitch_keycenter=b4
+tune=3
+volume=-27
+        
+<region>
+sample=..\libs\SSO\Samples\Bass Clarinet\bass_clarinet-d5-PB-loop.wav
+offset=250
+
+lokey=c#5
+hikey=a5
+pitch_keycenter=d5
+volume=-22.5
+
+
+
+

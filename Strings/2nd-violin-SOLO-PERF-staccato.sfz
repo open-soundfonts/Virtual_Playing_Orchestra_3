@@ -1,0 +1,436 @@
+//==============================================================
+// 2nd Violin SOLO : Performance Staccato
+//
+// ... where the mod wheel increases the volume
+//
+//   by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+<control>
+// set some sfz 2.0 default values
+// mod wheel
+set_cc1=64
+// pan (not used but Sforzando will default to 0 = 100%L when
+//  other CC settings are present)
+set_cc10=64
+
+//==============================================================
+// Solo 2nd Violin : Staccato
+//
+//   SViolinSpic-PB.sfz from Versilian Studios - http://vis.versilstudios.net/vsco-2.html
+//
+//   by Paul Battersby - http://virtualplaying.com
+//
+//==============================================================
+
+// removed control and group opcodes can't merge files otherwise (PB)
+
+<group>
+volume=-42
+
+// cc1 controls gain after lowering volume of all samples (PB)
+gain_cc1=34
+// reduce velocity tracking, use cc1 for volume (PB)
+amp_veltrack=60
+
+
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+
+ampeg_attack=0.03
+ampeg_release=4
+
+// reduce the harshness of the notes a little
+eq1_freq=528.4
+eq1_bw=0.54
+eq1_gain=-4.8
+eq2_freq=99401.1
+eq2_bw=2.69
+eq2_gain=-7.4
+ //Begin Group 1
+
+
+
+
+seq_length=2
+
+
+seq_position=1
+
+
+group_label=gr_1
+
+// removed low velocity samples - not worth it (PB)
+
+// removed LLVln_spic_A2 - too scratchy (PB)
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Solo Violin\spic\LLVln_spic_A3_v2_rr1-PB.wav
+volume=-38.3
+
+lokey=68
+hikey=70
+pitch_keycenter=69
+lovel=0
+hivel=127
+
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Solo Violin\spic\LLVln_spic_A4_v2_rr1-PB.wav
+volume=-39.3
+
+lokey=80
+hikey=82
+pitch_keycenter=81
+lovel=0
+hivel=127
+
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Solo Violin\spic\LLVln_spic_A5_v2_rr1-PB.wav
+volume=-40.3
+
+lokey=92
+hikey=94
+pitch_keycenter=93
+lovel=0
+hivel=127
+
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Solo Violin\spic\LLVln_spic_C3_v2_rr1-PB.wav
+volume=-40.3
+offset=1120
+ampeg_attack=0.03
+
+lokey=55
+hikey=61
+pitch_keycenter=60
+lovel=0
+hivel=127
+
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Solo Violin\spic\LLVln_spic_C4_v2_rr1-PB.wav
+volume=-40.3
+
+lokey=71
+hikey=73
+pitch_keycenter=72
+lovel=0
+hivel=127
+
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Solo Violin\spic\LLVln_spic_C5_v2_rr1-PB.wav
+volume=-37.3
+
+lokey=83
+hikey=85
+pitch_keycenter=84
+lovel=0
+hivel=127
+
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Solo Violin\spic\LLVln_spic_C6_v2_rr1-PB.wav
+volume=-40.3
+
+lokey=95
+hikey=105
+pitch_keycenter=96
+lovel=0
+hivel=127
+
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Solo Violin\spic\LLVln_spic_E3_v2_rr1-PB.wav
+volume=-39.3
+
+lokey=62
+hikey=65
+pitch_keycenter=64
+lovel=0
+hivel=127
+
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Solo Violin\spic\LLVln_spic_E4_v2_rr1-PB.wav
+volume=-39.3
+
+lokey=74
+hikey=77
+pitch_keycenter=76
+lovel=0
+hivel=127
+
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Solo Violin\spic\LLVln_spic_E5_v2_rr1-PB.wav
+volume=-39.3
+
+lokey=86
+hikey=89
+pitch_keycenter=88
+lovel=0
+hivel=127
+
+
+
+// removed LLVln_spic_G2_v2_rr2-PB.wav - sample had double bounce (PB)
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Solo Violin\spic\LLVln_spic_G3_v2_rr1-PB.wav
+volume=-40.3
+
+lokey=66
+hikey=67
+pitch_keycenter=67
+lovel=0
+hivel=127
+
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Solo Violin\spic\LLVln_spic_G4_v2_rr1-PB.wav
+volume=-40.3
+
+lokey=78
+hikey=79
+pitch_keycenter=79
+lovel=0
+hivel=127
+
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Solo Violin\spic\LLVln_spic_G5_v2_rr1-PB.wav
+volume=-40.3
+
+lokey=90
+hikey=91
+pitch_keycenter=91
+lovel=0
+hivel=127
+
+
+
+<group>
+volume=-42
+
+// cc1 controls gain after lowering volume of all samples (PB)
+gain_cc1=34
+// reduce velocity tracking, use cc1 for volume (PB)
+amp_veltrack=60
+
+
+// randomize like a real player(PB)
+pitch_random=12
+amp_random=1.5
+delay_random=0.012
+
+
+
+ampeg_attack=0.03
+ampeg_release=4
+
+// reduce the harshness of the notes a little
+eq1_freq=528.4
+eq1_bw=0.54
+eq1_gain=-4.8
+eq2_freq=99401.1
+eq2_bw=2.69
+eq2_gain=-7.4
+ //Begin Group 2
+
+
+
+
+seq_length=2
+
+
+seq_position=2
+
+
+group_label=gr_2
+
+
+// removed low velocity samples - not worth it (PB)
+
+
+// removed LLVln_spic_A2 - too scratchy (PB)
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Solo Violin\spic\LLVln_spic_A3_v2_rr2-PB.wav
+volume=-39.3
+
+lokey=68
+hikey=70
+pitch_keycenter=69
+lovel=0
+hivel=127
+
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Solo Violin\spic\LLVln_spic_A4_v2_rr2-PB.wav
+volume=-37.3
+
+lokey=80
+hikey=82
+pitch_keycenter=81
+lovel=0
+hivel=127
+
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Solo Violin\spic\LLVln_spic_A5_v2_rr2-PB.wav
+volume=-40.3
+
+lokey=92
+hikey=94
+pitch_keycenter=93
+lovel=0
+hivel=127
+
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Solo Violin\spic\LLVln_spic_C3_v2_rr2-PB.wav
+volume=-40.3
+
+lokey=55
+hikey=61
+pitch_keycenter=60
+lovel=0
+hivel=127
+
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Solo Violin\spic\LLVln_spic_C4_v2_rr2-PB.wav
+volume=-40.3
+
+lokey=71
+hikey=73
+pitch_keycenter=72
+lovel=0
+hivel=127
+
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Solo Violin\spic\LLVln_spic_C5_v2_rr2-PB.wav
+volume=-38.3
+
+lokey=83
+hikey=85
+pitch_keycenter=84
+lovel=0
+hivel=127
+
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Solo Violin\spic\LLVln_spic_C6_v2_rr2-PB.wav
+volume=-40.3
+
+lokey=95
+hikey=105
+pitch_keycenter=96
+lovel=0
+hivel=127
+
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Solo Violin\spic\LLVln_spic_E3_v2_rr2-PB.wav
+volume=-38.3
+
+lokey=62
+hikey=65
+pitch_keycenter=64
+lovel=0
+hivel=127
+
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Solo Violin\spic\LLVln_spic_E4_v2_rr2-PB.wav
+volume=-39.3
+
+lokey=74
+hikey=77
+pitch_keycenter=76
+lovel=0
+hivel=127
+
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Solo Violin\spic\LLVln_spic_E5_v2_rr2-PB.wav
+volume=-39.3
+
+lokey=86
+hikey=89
+pitch_keycenter=88
+lovel=0
+hivel=127
+
+
+
+// removed LLVln_spic_G2_v2_rr2-PB.wav - sample had double bounce (PB)
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Solo Violin\spic\LLVln_spic_G3_v2_rr2-PB.wav
+volume=-40.3
+
+lokey=66
+hikey=67
+pitch_keycenter=67
+lovel=0
+hivel=127
+
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Solo Violin\spic\LLVln_spic_G4_v2_rr2-PB.wav
+volume=-39.3
+
+lokey=78
+hikey=79
+pitch_keycenter=79
+lovel=0
+hivel=127
+
+
+
+<region>
+sample=..\libs\VSCO2-CE\Strings\Solo Violin\spic\LLVln_spic_G5_v2_rr2-PB.wav
+volume=-40.3
+
+lokey=90
+hikey=91
+pitch_keycenter=91
+lovel=0
+hivel=127
+
+
+
+
+
